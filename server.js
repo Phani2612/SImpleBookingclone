@@ -2,10 +2,6 @@ const Publishkey = 'pk_test_51OnD5DSHKuOJ2OzwK75MUOL0gh3uRoE1bZcBAtUwHfNutdDO82r
 
 const Secretkey = 'sk_test_51OnD5DSHKuOJ2Ozwfov2PAvt9eVPFPNr1OW69TbjybEKQigT7xG4ecDE78yGUj2bzmJdswdhDXfRyE6yYutcUZXR00rtZOBiAj'
 
-const Stripe = require('stripe')('sk_test_51OnD5DSHKuOJ2Ozwfov2PAvt9eVPFPNr1OW69TbjybEKQigT7xG4ecDE78yGUj2bzmJdswdhDXfRyE6yYutcUZXR00rtZOBiAj')
-
-
-
 const Express = require('express')
 
 const App = Express()
@@ -15,6 +11,8 @@ const Mongoose = require('mongoose')
 const BCRYPT = require('bcryptjs')
 
 const CORS = require('cors')
+
+const Stripe = require('stripe')(Secretkey)
 
 App.use(Express.urlencoded())
 
