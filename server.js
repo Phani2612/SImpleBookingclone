@@ -20,7 +20,14 @@ App.use(Express.urlencoded())
 
 App.use(Express.json())
 
-App.use(CORS())
+// App.use(CORS())
+
+
+App.use(CORS({
+    origin: 'http://localhost:3000', // Allow requests from this origin
+    
+    credentials: true,
+}))
 
 App.set('views', './Views');
 
