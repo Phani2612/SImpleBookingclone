@@ -2,6 +2,10 @@ const Publishkey = 'pk_test_51OnD5DSHKuOJ2OzwK75MUOL0gh3uRoE1bZcBAtUwHfNutdDO82r
 
 const Secretkey = 'sk_test_51OnD5DSHKuOJ2Ozwfov2PAvt9eVPFPNr1OW69TbjybEKQigT7xG4ecDE78yGUj2bzmJdswdhDXfRyE6yYutcUZXR00rtZOBiAj'
 
+const Stripe = require('stripe')('sk_test_51OnD5DSHKuOJ2Ozwfov2PAvt9eVPFPNr1OW69TbjybEKQigT7xG4ecDE78yGUj2bzmJdswdhDXfRyE6yYutcUZXR00rtZOBiAj')
+
+
+
 const Express = require('express')
 
 const App = Express()
@@ -12,20 +16,11 @@ const BCRYPT = require('bcryptjs')
 
 const CORS = require('cors')
 
-const Stripe = require('stripe')(Secretkey)
-
 App.use(Express.urlencoded())
 
 App.use(Express.json())
 
-// App.use(CORS())
-
-
-App.use(CORS({
-    origin: 'http://localhost:3000', // Allow requests from this origin
-    
-    credentials: true,
-}))
+App.use(CORS())
 
 App.set('views', './Views');
 
@@ -752,6 +747,8 @@ App.post('/location' , async function(req,res)
      }
 
      else{
+
+     await Usermodel.findOneAndUpdate({Email : UserMail} , {$set : {LocationID : Check}})
 
      await LocationModel.findOneAndUpdate({name : Location} , {$set : {AllUsers : Allusers}})
 
