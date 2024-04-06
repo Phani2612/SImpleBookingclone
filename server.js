@@ -1086,7 +1086,7 @@ App.post('/payment' , async function(req,res)
 
 
 
-       res.redirect('http://localhost:3000/Confirmed')
+       res.redirect('https://simplebooking.onrender.com/Confirmed')
     }).catch(function()
     {
         res.send('<h3>Payment not successfull</h3>')
