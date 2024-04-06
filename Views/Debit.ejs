@@ -6,15 +6,15 @@
     <title>Debit Card Payment Form</title>
     <style>
         body {
-            /* Add a radial gradient background */
+            
             background: radial-gradient(circle, #0f3057, #097286);
-            /* Ensure text is visible against the gradient background */
+          
             color: #fff;
-            /* Center text horizontally */
+      
             text-align: center;
-            /* Add some padding to improve readability */
+         
             padding: 20px;
-            /* Set font family */
+         
             font-family: Arial, sans-serif;
         }
         h3 {
@@ -49,24 +49,14 @@
             /* Change button color on hover */
             background-color: #ff7b00;
         }
-        .stripe-button:focus {
-            /* Add outline on focus */
-            outline: none;
-        }
-        .stripe-button:active {
-            /* Add slight shadow on click */
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-            transform: translateY(2px);
-        }
+     
     </style>
 </head>
 <body>
     
     
 
-    <!-- stripe ==> checkout.js -->
-    <!-- http://checkout.stripe.com/v2/checkout.js -->
-    <!-- requesting a checkout page(debit card payment page) -->
+
     <form method="post" action="/payment" >
         <h3>Welcome to the Debit Card Payment Form!</h3>
         <script src="http://checkout.stripe.com/v2/checkout.js"  class="stripe-button" data-key="<%= Publish %>" data-locale="en"></script>
