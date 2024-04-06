@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "Name": "Morning",
+      "Location": ""
+    },
+    {
+      "id": 2,
+      "Name": "Afternoon",
+      "Location": ""
+    },
+    {
+      "id": 3,
+      "Name": "Evening",
+      "Location": ""
+    },
+    {
+      "id": 4,
+      "Name": "Night",
+      "Location": ""
+    }
+  ]
+  
